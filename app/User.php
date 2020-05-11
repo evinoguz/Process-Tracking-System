@@ -19,6 +19,22 @@ class User extends Authenticatable
         'name', 'email', 'password',
     ];
 
+    public function roles()
+    {
+        return $this->belongsToMany("App\Role","role_users");
+    }
+    public function authorized($yetki)
+    {
+        foreach ($this->roles()->get() as $role)
+        {
+            if($role->name==$yetki)
+            {
+                return true;
+                break;
+            }
+        }
+        return false;
+    }
     /**
      * The attributes that should be hidden for arrays.
      *

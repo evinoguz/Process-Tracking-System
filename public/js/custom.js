@@ -61,16 +61,16 @@ $(function(){
         style: 'btn-default'
     });
     //
-    $(".status").bootstrapSwitch();
+    $(".durum").bootstrapSwitch();
     //
 
-    $(".status").on('switchChange.bootstrapSwitch', function(event, state) {
+    $(".durum").on('switchChange.bootstrapSwitch', function(event, state) {
         console.log(this); // DOM element
         console.log(event); // jQuery event
         console.log(state); // true | false
 
         $.ajax({
-            data: {"status": state,"id":$(this).data("id") },
+            data: {"durum": state,"id":$(this).data("id") },
             type: "POST",
             url: $(this).data("url"),
 
