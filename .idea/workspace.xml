@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29dd70d5-aed0-42df-96ca-ffbccd86506e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Yazar/PostController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/yazar/post_create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/yazar/post_edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/yazar/post_index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/custom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/1589192607.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/1589192607.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/thumb_1589192607.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/uploads/thumb_1589192607.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/AdminMi.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/AdminMi.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/YazarMi.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/YazarMi.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -156,11 +157,15 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="C:/xampp/htdocs/blog/resources/views/layouts/master.blade.php" />
+    <property name="last_opened_file_path" value="C:/xampp/htdocs/blog/resources/views/yazar/makale_edit.blade.php" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.zend.framework.tool" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\16541\Documents\GitHub\Seyahat_Blogu\resources\views\yazar" />
+      <recent name="C:\Users\16541\Documents\GitHub\Seyahat_Blogu\app\Http\Controllers\Yazar" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\16541\Documents\GitHub\Seyahat_Blogu\public\js" />
       <recent name="C:\xampp\htdocs\Seyehat_Blogu\resources\views" />
@@ -203,7 +208,7 @@
       <workItem from="1589131138682" duration="6662000" />
       <workItem from="1589189395483" duration="5507000" />
       <workItem from="1589196946830" duration="3728000" />
-      <workItem from="1589454975648" duration="4098000" />
+      <workItem from="1589454975648" duration="6354000" />
     </task>
     <servers />
   </component>

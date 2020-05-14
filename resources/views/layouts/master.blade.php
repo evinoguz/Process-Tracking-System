@@ -59,8 +59,8 @@
                                     <li class="divider"></li>
                                 @endif
                                 @if(Auth::user()->authorized("author"))
-                                    <li><a href="{{ url('/author_post') }}""><i class="fa fa-btn fa-list"></i>Postlarım</a></li>
-                                    <li><a href="{{ url('/author_post/create') }}"><i class="fa fa-btn fa-plus"></i>Yeni Post Ekle</a></li>
+                                    <li><a href="{{ url('/mypost') }}""><i class="fa fa-btn fa-list"></i>Postlarım</a></li>
+                                    <li><a href="{{ url('/mypost/create') }}"><i class="fa fa-btn fa-plus"></i>Yeni Post Ekle</a></li>
                                 @endif
                                 @if(!Auth::user()->authorized("admin") && !Auth::user()->authorized("author"))
                                     <li><a href="{{ url('/yazarlik_talebi') }}"><i class="fa fa-btn fa-envelope"></i>Yazarlık Talebi</a></li>

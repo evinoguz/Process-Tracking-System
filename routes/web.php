@@ -22,10 +22,12 @@ Route::group(['middleware'=>['admin_mi','auth']],function (){
         Route::delete('/talep/{id}','TalepController@destroy')->name('talep.destroy');
     }) ;
 });
-//Route::group(['middleware'=>['yazar_mi','auth']],function (){
-//    Route::group(['namespace'=>'Yazar'],function (){
-//        Route::resource('post','PostController');
-//    }) ;
-//});
+
+Route::group(['middleware'=>['yazar_mi','auth']],function (){
+    Route::group(['namespace'=>'Yazar'],function (){
+        Route::resource('mypost','PostController');
+    }) ;
+});
+
 Route::get('/yazarlik_talebi','YazarlikTalepController@index');
 Route::post('/yazarlik_talebi/send','YazarlikTalepController@send');
