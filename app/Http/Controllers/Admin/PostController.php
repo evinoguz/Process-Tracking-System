@@ -72,7 +72,7 @@ class PostController extends Controller
     public function edit($id)
     {
         $posts=Post::find($id);
-        return view('admin.post_edit');
+        return view('admin.post_edit',compact('posts'));
 
     }
 
@@ -115,7 +115,7 @@ class PostController extends Controller
         Session::flash('status',1);
         return back();
     }
-    public function s(Request $request)
+    public function status_change(Request $request)
     {
         $id=$request->id;
         $status=($request->status=='true')? 1:0;

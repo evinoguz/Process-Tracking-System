@@ -26,9 +26,9 @@ $(function(){
         "showMethod": "fadeIn",
         "hideMethod": "fadeOut"
     }
-    var durum = parseInt($("body").data("status"));
+    var status = parseInt($("body").data("status"));
 
-    switch (durum)
+    switch (status)
     {
         case 0 :
             toastr.error('Hata oluştu');
@@ -61,16 +61,16 @@ $(function(){
         style: 'btn-default'
     });
     //
-    $(".durum").bootstrapSwitch();
+    $(".status").bootstrapSwitch();
     //
 
-    $(".durum").on('switchChange.bootstrapSwitch', function(event, state) {
+    $(".status").on('switchChange.bootstrapSwitch', function(event, state) {
         console.log(this); // DOM element
         console.log(event); // jQuery event
         console.log(state); // true | false
 
         $.ajax({
-            data: {"durum": state,"id":$(this).data("id") },
+            data: {"status": state,"id":$(this).data("id") },
             type: "POST",
             url: $(this).data("url"),
 

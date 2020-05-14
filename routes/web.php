@@ -16,7 +16,7 @@ Route::group(['middleware'=>['admin_mi','auth']],function (){
     Route::group(['namespace'=>'Admin'],function (){
         Route::resource('user','UserController');
         Route::resource('post','PostController');
-        Route::post('post/status_change','PostController@s');
+        Route::post('post/status_change','PostController@status_change');
         Route::get('/talep','TalepController@index');
         Route::get('/talep/status_change','TalepController@status_change');
         Route::delete('/talep/{id}','TalepController@destroy')->name('talep.destroy');
