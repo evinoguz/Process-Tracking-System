@@ -1,4 +1,4 @@
-field is required.<?php
+confirmationfield is required.<?php
 
 return [
 
@@ -30,7 +30,7 @@ return [
         'array' => 'The :attribute must have between :min and :max items.',
     ],
     'boolean' => 'The :attribute field must be true or false.',
-    'confirmed' => 'The :attribute confirmation does not match.',
+    'confirmed' => ':attribute uyuşmuyor .',
     'date' => 'The :attribute is not a valid date.',
     'date_equals' => 'The :attribute must be a date equal to :date.',
     'date_format' => 'The :attribute does not match the format :format.',
@@ -113,7 +113,7 @@ return [
     'starts_with' => 'The :attribute must start with one of the following: :values.',
     'string' => 'The :attribute must be a string.',
     'timezone' => 'The :attribute must be a valid zone.',
-    'unique' => 'The :attribute has already been taken.',
+    'unique' => ':attribute zaten var.',
     'uploaded' => 'The :attribute failed to upload.',
     'url' => 'The :attribute format is invalid.',
     'uuid' => 'The :attribute must be a valid UUID.',
@@ -147,18 +147,8 @@ return [
     */
 
     'attributes' => [
-        'title'=>'Başlık',
-        'author'=>'Yazar',
-        'description'=>'Açıklama',
         'keywords'=>'Keywords',
-        'image'=>'Resim',
-        'kategori_id'=>'Kategori',
-        'content'=>'İçerik',
-        'explanation'=>'Açıklama',
-        'name'=>'İsim',
-        'email'=>'Email',
-        'location'=>'Konum',
-        'password'=>'Şifre',
+
 
     ],
 

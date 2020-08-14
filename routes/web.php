@@ -12,22 +12,35 @@ Route::get('/view/{id}', 'HomeController@view')->name('view');
 //   return dd(Ayar::pluck('value','name')->all());
 //});
 
-Route::group(['middleware'=>['admin_mi','auth']],function (){
-    Route::group(['namespace'=>'Admin'],function (){
+Route::group(['middleware'=>['manager_İs','auth']],function (){
+    Route::group(['namespace'=>'Manager'],function (){
         Route::resource('user','UserController');
         Route::resource('post','PostController');
+        Route::resource('product','ProductController');
+        Route::resource('step','StepController');
+        Route::resource('sub_step','Sub_StepController');
+        Route::resource('employees_step','Employees_StepController');
         Route::post('post/status_change','PostController@status_change');
         Route::get('/talep','TalepController@index');
-        Route::get('/talep/status_change','TalepController@status_change');
+        Route::post('/talep/status_change','TalepController@status_change');
         Route::delete('/talep/{id}','TalepController@destroy')->name('talep.destroy');
+
     }) ;
 });
 
-Route::group(['middleware'=>['yazar_mi','auth']],function (){
-    Route::group(['namespace'=>'Yazar'],function (){
-        Route::resource('mypost','PostController');
+
+Route::group(['middleware'=>['employees_İs','auth']],function (){
+    Route::group(['namespace'=>'Employees'],function (){
+        Route::resource('order_step','Order_StepController');
+
     }) ;
 });
 
-Route::get('/yazarlik_talebi','YazarlikTalepController@index');
-Route::post('/yazarlik_talebi/send','YazarlikTalepController@send');
+
+Route::group(['middleware'=>['customer_İs','auth']],function (){
+    Route::group(['namespace'=>'Customer'],function (){
+        Route::resource('order','OrderController');
+    }) ;
+});
+
+

@@ -13,9 +13,9 @@ class RoleTableSeeder extends Seeder
     public function run()
     {
         $roles=array(
-            array("name"=>"admin"),
-            array("name"=>"author"),
-            array("name"=>"standart"),
+            array("name"=>"manager"),
+            array("name"=>"employees"),
+            array("name"=>"customer"),
 
         );
         foreach ($roles as $role)

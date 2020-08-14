@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
+    <meta name="keywords" content="">
     <meta name="author" content="">
-    <title>Seyahat Blog</title>
+    <title>Süreç Takip Sistemi</title>
     <link href="{{asset("vendor/bootstrap/css/bootstrap.min.css")}}" rel="stylesheet">
     <!-- Theme CSS -->
     <link href="{{asset("css/toastr.min.css")}}" rel="stylesheet">
@@ -37,33 +38,40 @@
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
     <div class="container-fluid" id="topbar">
-        <div>
+        <div class="row">
             <div class="col-md-12">
                 <ul>
                     <li><a href="/home"><i class="fa fa-home">Home</i></a></li>
                     @if(Auth::guest())
-                        <li><a href="/login" class="uyelik-tus"  style="color: yellow; font-size: 15px"><i class="fa fa-sign-in"></i>Üye Girişi</a></li>
-                        <li><a href="/register" class="uyelik-tus"  style="color: yellow; font-size: 15px"><i class="fa fa-users"></i>Üye Ol</a></li>
+                        <li><a href="/login" class="uyelik-tus"  style="color: yellow; font-size: 12px"><i class="fa fa-sign-in"></i>Üye Girişi</a></li>
+                        <li><a href="/register" class="uyelik-tus"  style="color: yellow; font-size: 12px"><i class="fa fa-users"></i>Üye Ol</a></li>
 
                     @else
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"   style="color: yellow; font-size: 15px" role="button" aria-expanded="false">
                                 {{ ucfirst(Auth::user()->name) }} <span class="caret"></span>
                             </a>
 
                             <ul class="dropdown-menu dropdown-menu-right" role="menu">
-                                @if(Auth::user()->authorized("admin"))
-                                    <li><a href="{{ url('/user') }}"><i class="fa fa-btn fa-users"></i>Kullanıcı Ayarları</a></li>
-                                    <li><a href="{{ url('/post') }}"><i class="fa fa-btn fa-list-ol"></i>Postlar</a></li>
-                                    <li><a href="{{ url('/talep') }}"><i class="fa fa-btn fa-envelope-o"></i>Yazarlık Talepleri</a></li>
+                                @if(Auth::user()->authorized("manager"))
+
+                                    <li><a href="{{ url('/product') }}"><i class="fa fa-btn fa-users"></i>Product Setting</a></li>
+                                     <li><a href="{{ url('/user') }}"><i class="fa fa-btn fa-users"></i>User Setting</a></li>
+                                    <li><a href="{{ url('/step') }}"><i class="fa fa-btn fa-users"></i>Step Setting</a></li>
+                                    <li><a href="{{ url('/employees_step') }}"><i class="fa fa-btn fa-users"></i>Employees Step Setting</a></li>
+
                                     <li class="divider"></li>
                                 @endif
-                                @if(Auth::user()->authorized("author"))
-                                    <li><a href="{{ url('/mypost') }}""><i class="fa fa-btn fa-list"></i>Postlarım</a></li>
-                                    <li><a href="{{ url('/mypost/create') }}"><i class="fa fa-btn fa-plus"></i>Yeni Post Ekle</a></li>
+
+                                @if(Auth::user()->authorized("employees"))
+                                    <li><a href="{{ url('/order_step') }}"><i class="fa fa-btn fa-list"></i>Order View</a></li>
                                 @endif
-                                @if(!Auth::user()->authorized("admin") && !Auth::user()->authorized("author"))
-                                    <li><a href="{{ url('/yazarlik_talebi') }}"><i class="fa fa-btn fa-envelope"></i>Yazarlık Talebi</a></li>
+
+
+                                @if(!Auth::user()->authorized("manager") && !Auth::user()->authorized("employees"))
+                                    <li><a href="{{ url('/order') }}"><i class="fa fa-btn fa-envelope"></i>Product View</a></li>
+                                        <li><a href="{{ url('/order/create') }}"><i class="fa fa-btn fa-envelope"></i>Product Buy</a></li>
+                                        <li><a href="{{ url('#') }}"><i class="fa fa-btn fa-envelope"></i>Product See</a></li>
                                 @endif
                                 <li><a href="{{route('log_out')}}"><i class="fa fa-btn fa-sign-out"></i>Çıkış</a></li>
                             </ul>
@@ -74,7 +82,18 @@
         </div>
     </div>
 </nav>
-
+<header class="intro-header" style="background-image: url({{asset('img/logo.PNG')}})">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1 class="post-title"> </h1>
+                    <span class="subheading"><h1>Süreç Takıbi</h1></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
 @yield('contents')
 <hr>
 <!-- Footer -->
@@ -84,7 +103,7 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <ul class="list-inline text-center">
                     <li>
-                        <a href="#">
+                        <a href="facebook">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
@@ -92,7 +111,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="twitter">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
@@ -100,7 +119,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="github">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -108,7 +127,7 @@
                         </a>
                     </li>
                 </ul>
-                <p class="copyright text-muted">Copyright &copy; Your Website 2016</p>
+                <p class="copyright text-muted">Copyright &copy; Evin Oğuz 2020</p>
             </div>
         </div>
     </div>

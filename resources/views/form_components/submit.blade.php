@@ -4,6 +4,6 @@
             <i class="fa fa-btn fa-save"></i>
             {{$name}}
         </button>
-        <a href="{{$url}}" class="btn btn-primary">Vazgeç</a>
+        <a href="{{$url}}" class="btn btn-primary">Cancel</a>
     </div>
 </div>
