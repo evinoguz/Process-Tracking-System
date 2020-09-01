@@ -69,7 +69,7 @@
 
 
                                 @if(!Auth::user()->authorized("manager") && !Auth::user()->authorized("employees"))
-                                    <li><a href="{{ url('/order') }}"><i class="fa fa-btn fa-envelope"></i>Product View</a></li>
+                                    <li><a href="{{ url('/order22') }}"><i class="fa fa-btn fa-envelope"></i>Product View</a></li>
                                         <li><a href="{{ url('/order/create') }}"><i class="fa fa-btn fa-envelope"></i>Product Buy</a></li>
                                         <li><a href="{{ url('#') }}"><i class="fa fa-btn fa-envelope"></i>Product See</a></li>
                                 @endif

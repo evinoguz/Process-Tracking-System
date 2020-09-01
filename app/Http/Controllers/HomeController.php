@@ -21,12 +21,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $posts=Post::where('status',1)->orderBy('created_at','desc')->get();
-        return view('homepage',compact('posts'));
+        return view('homepage');
     }
-    public function view($id)
-    {
-        $posts=Post::find($id);
-        return view('yazar.view',compact('posts'));
-    }
+
 }

@@ -19,7 +19,6 @@ class CreateSubStepsTable extends Migration
             $table->string('name');
             $table->foreign('step_id')->references('id')->on('steps')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
-
         });
     }
 
